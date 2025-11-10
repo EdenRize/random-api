@@ -1,4 +1,4 @@
-import { CREDENTIALS, NODE_ENV, ORIGIN, PORT } from '@config';
+import { CREDENTIALS, NODE_ENV, PORT } from '@config';
 import { Routes } from '@interfaces/routes.interface';
 import cors from 'cors';
 import express from 'express';
@@ -31,7 +31,7 @@ export class App {
   }
 
   private initializeMiddlewares() {
-    this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS }));
+    this.app.use(cors({ origin: 'http://localhost:5173', credentials: CREDENTIALS }));
   }
 
   private initializeRoutes(routes: Routes[]) {
