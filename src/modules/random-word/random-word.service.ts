@@ -3,7 +3,7 @@ import pLimit from 'p-limit';
 
 export const generateRandomWordsMap = async () => {
   const url = 'https://random-word-api.vercel.app/api?words=1';
-  const CALLS = 6000;
+  const CALLS = 500;
   const limit = pLimit(50);
 
   const promises = Array.from({ length: CALLS }, () =>
